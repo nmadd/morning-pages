@@ -12,7 +12,8 @@ var schema = new mongoose.Schema({
     fields: [{
         prompt: String,
         answers: [String],
-        answer_type: String
+        answer_type: String,
+        answer_lines: Number
     }]
 });
 

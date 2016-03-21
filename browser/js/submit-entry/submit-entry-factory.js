@@ -1,8 +1,7 @@
 app.factory('SubmitEntryFactory', function($http) {
     var factory = {};
-    var isEditable = false;
 
-    factory.getEntryFields = function() {
+    factory.getFields = function() {
         return $http({
             method: "GET",
             url: "http://localhost:3000/api/get-entry-fields"
@@ -10,14 +9,6 @@ app.factory('SubmitEntryFactory', function($http) {
         .then(function(response){
         	return response.data
         })
-    }
-
-    factory.setIsEditable = function(){
-        isEditable = !isEditable;
-    }
-
-    factory.getIsEditable = function(){
-        return isEditable;
     }
 
     factory.deleteField = function(field){
