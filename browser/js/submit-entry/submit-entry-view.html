@@ -1,0 +1,32 @@
+<button ng-click="setIsEditable()">Edit</button>
+<div class="form">
+    <form name="entryForm" ng-submit="submitEntry()">
+    
+        <!-- TITLE SEARCH FIELD-->
+        <div class="form-group" ng-repeat="field in formData.fields">
+            <label>{{field.prompt}}</label>
+            <input type="text" name="data" ng-model="field.answer">
+            <button ng-click="deleteField(field)" ng-show="getIsEditable()">Delete</button>
+        </div>
+  
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>
+    </form>
+    <br>
+    <br>
+    <div ng-show="getIsEditable()">
+        <h4>Add a field</h4>
+        <form name="addAnEntry" ng-submit="addEntry()">
+        
+            <!-- TITLE SEARCH FIELD-->
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="formTitle" ng-model="formTitle">
+            </div>
+
+      
+            <!-- SUBMIT BUTTON -->
+            <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>
+        </form>
+    </div>
+</div>
