@@ -1,4 +1,14 @@
-
+<div class="form">
+    <h4>Add an Entry</h4>
+    <form name="entryForm" ng-submit="addEntry(newEntry)">
+        <div class="form-group" ng-repeat="field in fields track by $index">
+            <label>{{field.prompt}}</label>
+            <textarea ng-if="field.answer_type === 'textarea'" name="" id="" cols="30" rows="10"></textarea>
+            <input ng-repeat="input in createArray(field.answer_lines) track by $index" ng-if="field.answer_type !== 'textarea'" type="text" class="text-class" name="question" ng-model="question">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>
+    </form>
+</div>
 <div class="form">
     <h4>Add a field</h4>
     <form name="fieldForm" ng-submit="addField(newField)">
@@ -10,8 +20,11 @@
             <label>Number of Answers:</label>
             <input type="text" name="number_answers" ng-model="number_answers">
         </div>
+        <div class="form-group">
+            <label>Answer Type:</label>
+            <input type="radio" name="answer_type" ng-model="answer_type" value="text"> text
+            <input type="radio" name="answer_type" ng-model="answer_type" value="textarea"> textarea
+        </div>
         <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>
     </form>
-
 </div>
-    {{newField}}

@@ -7,10 +7,10 @@ app.config(function($stateProvider, $urlRouterProvider){
 		controller: 'SubmitEntryController',
 		resolve: {
 			theEntryFields: function(SubmitEntryFactory){
-				// return SubmitEntryFactory.getEntryFields()
-				// .then(function(response){
-				// 	return response;
-				// })
+				return SubmitEntryFactory.getFields()
+				.then(function(response){
+					return response;
+				})
 			}
 		}
 	})
