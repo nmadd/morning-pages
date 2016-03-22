@@ -1,13 +1,17 @@
+
 <div class="form">
     <h4>Add a field</h4>
-    <form name="fieldForm" ng-submit="addField()">
-        <!-- TITLE SEARCH FIELD-->
+    <form name="fieldForm" ng-submit="addField(newField)">
         <div class="form-group">
             <label>Prompt:</label>
             <input type="text" name="prompt" ng-model="prompt">
         </div>
-        <!-- SUBMIT BUTTON -->
+        <div class="form-group">
+            <label>Number of Answers:</label>
+            <input type="text" name="number_answers" ng-model="number_answers">
+        </div>
         <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>
     </form>
+
 </div>
-</div>
+    {{newField}}

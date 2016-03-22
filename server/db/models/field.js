@@ -1,7 +1,6 @@
 'use strict';
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var _ = require('lodash');
 
 var schema = new mongoose.Schema({
     user: [{
@@ -9,11 +8,10 @@ var schema = new mongoose.Schema({
         ref: "User"
     }],
     date: Date,
-    fields: [{
-        prompt: String,
-        answers: [String]
-    }]
+    prompt: String,
+    answer_lines: Number,
+    answer_type: String
 });
 
 
-mongoose.model('Entry', schema);
+mongoose.model('Field', schema);

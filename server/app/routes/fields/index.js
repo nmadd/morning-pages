@@ -1,20 +1,20 @@
 'use strict';
 let router = require('express').Router();
-let Entry = require('mongoose').model('Entry');
+let Field = require('mongoose').model('Field');
 module.exports = router;
 
 router.route('/')
     .get((req, res, next) => {
-        Entry.find({})
-            .then(entries => {
-                res.json(entries);
+        Field.find({})
+            .then(fields => {
+                res.json(fields);
             })
             .then(null, next);
     })
     .post((req, res, next) => {
-        Entry.create(req.body)
-            .then(entry => {
-                res.status(201).json(entry);
+        Field.create(req.body)
+            .then(field => {
+                res.status(201).json(field);
             })
             .then(null, next);
     })

@@ -1,6 +1,10 @@
 app.factory('SubmitEntryFactory', function($http) {
     var factory = {};
 
+    factory.addField = function(newField){
+        console.log('New Field', newField)
+    }
+
     factory.getFields = function() {
         return $http({
             method: "GET",

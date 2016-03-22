@@ -1,9 +1,11 @@
 app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields){
+	$scope.test = 'test'
 	$scope.formData = {}
 	$scope.deleteField = SubmitEntryFactory.deleteField;
-	$scope.formData.fields = theEntryFields.map(function(field){
-		return {prompt: field.prompt, answer: field.data}
-	});
+	$scope.addField = SubmitEntryFactory.addField;
+	// $scope.formData.fields = theEntryFields.map(function(field){
+	// 	return {prompt: field.prompt, answer: field.data}
+	// });
 	$scope.submitEntry = function(){
 		$http({
 			method: "POST",
@@ -11,13 +13,18 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 			data: $scope.formData.fields
 		})
 	}
-	$scope.addEntry = function(){
-		var newEntry = {prompt: $scope.prompt, answer:''}
-		$scope.formData.fields.push(newEntry)
-		$http({
-			method: "POST",
-			url: "/api/add-field",
-			data: newEntry
-		})
+	$scope.addField = function(){
+		var newField = {
+			prompt: $scope.prompt, 
+			date: new Date(), 
+			answer_lines: $scope.number_answers
+		};
+		console.log(newField)
+		// $scope.formData.fields.push(newEntry)
+		// $http({
+		// 	method: "POST",
+		// 	url: "/api/add-field",
+		// 	data: newEntry
+		// })
 	}
 })
