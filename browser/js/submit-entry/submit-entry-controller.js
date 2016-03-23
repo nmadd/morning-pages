@@ -26,10 +26,16 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 	};
 
 	$scope.addEntry = function(entryFormData){
+		var entryKeys = Object.keys(entryFormData);
+		var fields = entryKeys.map(function(key){
+			return entryFormData[key];
+		});
 		var newEntry = {
-
+			date: new Date(),
+			fields: fields
 		};
 		console.log('Form data',entryFormData);
+		console.log('Fields',fields);
 		// $http({
 		// 	method: "POST",
 		// 	url: "/api/fields/",
