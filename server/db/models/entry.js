@@ -15,5 +15,14 @@ var schema = new mongoose.Schema({
     }]
 });
 
+// var schema = new mongoose.Schema({
+//     user: [{
+//         type: mongoose.Schema.Types.ObjectId,
+//         ref: "User"
+//     }],
+//     date: Date,
+//     fields: [Schema.Types.Mixed]
+// });
+
 
 mongoose.model('Entry', schema);
