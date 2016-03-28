@@ -35,11 +35,11 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 			fields: fields
 		};
 		console.log('Form data',entryFormData);
-		console.log('Fields',fields);
-		// $http({
-		// 	method: "POST",
-		// 	url: "/api/fields/",
-		// 	data: newField
-		// })
+		console.log('new entry',newEntry);
+		$http({
+			method: "POST",
+			url: "/api/entries/",
+			data: newEntry
+		})
 	};
 })
