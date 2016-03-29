@@ -1,16 +1,17 @@
--app.config(function($stateProvider, $urlRouterProvider){
+app.config(function($stateProvider, $urlRouterProvider){
 	$stateProvider
-	.state('submit', {
-		url: "/view",
+	.state('entries', {
+		url: "/entries",
 		templateUrl: 'js/view-entries/view-entries-view.html',
-		controller: 'ViewEntiesController',
+		controller: 'ViewEntriesController',
 		resolve: {
-			theEntryFields: function(SubmitEntryFactory){
-				return SubmitEntryFactory.getFields()
+			theEntries: function(ViewEntriesFactory){
+				return ViewEntriesFactory.getEntries()
 				.then(function(response){
 					return response;
 				})
 			}
 		}
+
 	})
 })

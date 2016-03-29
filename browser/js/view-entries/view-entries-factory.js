@@ -1,28 +1,15 @@
-app.factory('SubmitEntryFactory', function($http) {
+app.factory('ViewEntriesFactory', function($http) {
     var factory = {};
 
-    factory.getFields = function() {
+    factory.getEntries = function(){
         return $http({
             method: "GET",
-            url: "/api/fields"
+            url: "/api/entries"
         })
         .then(function(response){
-        	return response.data
+            return response.data
         })
-    }
-
-
-
-
-
- //    factory.submitEntry = function(data){
-	// 	$http({
-	// 		method: "POST",
-	// 		url: "/api/submit-entry",
-	// 		data: data
-	// 	})
-	// }
-
+    };
 
     return factory;
 })
