@@ -10,7 +10,8 @@ var schema = new mongoose.Schema({
     date: Date,
     prompt: String,
     answer_lines: Number,
-    answer_type: String
+    answer_type: String,
+    active: {type: Boolean, default: true}
 });
 
 

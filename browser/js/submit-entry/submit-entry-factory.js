@@ -9,7 +9,17 @@ app.factory('SubmitEntryFactory', function($http) {
         .then(function(response){
         	return response.data
         })
-    }
+    };
+
+    factory.hideField = function(id) {
+        return $http({
+            method: "PUT",
+            url: "/api/fields/" + id
+        })
+        .then(function(response){
+            return response.data
+        })
+    };
 
 
 

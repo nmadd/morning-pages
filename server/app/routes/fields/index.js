@@ -18,3 +18,13 @@ router.route('/')
             })
             .then(null, next);
     })
+
+router.route('/:id')
+    .put((req, res, next) => {
+        console.log('PUT', req.params.id)
+        Field.update({_id: req.params.id}, {active: false})
+            .then(fields => {
+                res.json(fields);
+            })
+            .then(null, next);
+    })

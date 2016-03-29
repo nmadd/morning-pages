@@ -7,6 +7,8 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
 	$scope.fields = theEntryFields;
 
+	$scope.hideField = SubmitEntryFactory.hideField;
+
 	$scope.createArray  = function(num){
 		return new Array(num);
 	};
