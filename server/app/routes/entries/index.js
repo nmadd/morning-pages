@@ -6,6 +6,7 @@ module.exports = router;
 router.route('/')
     .get((req, res, next) => {
         Entry.find({})
+            .sort('-date')
             .then(entries => {
                 res.json(entries);
             })
