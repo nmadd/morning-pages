@@ -1,11 +1,13 @@
-<div id="entries-container">
-	<div ng-repeat="entry in entries">
-		<h3>{{entry.date}}</h3>
-		<div ng-repeat="field in entry.fields track by $index">
-			<h4>{{field.prompt}}</h4>
-			<p ng-repeat="answer in field.answer">
-				{{answer}}
-			</p>
-		</div>
-	</div>
+<div id="entries-container" class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center" ng-repeat="entry in entries">
+            <h3>{{entry.date}}</h3>
+            <div ng-repeat="field in entry.fields track by $index">
+                <h4>{{field.prompt}}</h4>
+                <p ng-repeat="answer in field.answer">
+                    {{answer}}
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
