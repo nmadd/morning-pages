@@ -1,24 +1,63 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  background: #fdfdfd;
+    background: linear-gradient(270deg, #fff5c3, #d8faff, #cff8ba);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 47s ease infinite;
+    -moz-animation: AnimationName 47s ease infinite;
+    animation: AnimationName 47s ease infinite;
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+    @keyframes AnimationName {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
 }
 
 @mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 #main {
-  padding-top: 60px;
-  margin: 0 auto;
+    padding-top: 60px;
+    margin: 0 auto;
 }
 
 @import 'directives/main';
 @import 'home/main';
 @import 'login/main';
+@import 'submit-entry/main';
+@import 'view-entries/main';
