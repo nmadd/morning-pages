@@ -1,4 +1,4 @@
-app.config(function ($stateProvider) {
+app.config(function($stateProvider) {
 
     $stateProvider.state('login', {
         url: '/login',
@@ -8,18 +8,25 @@ app.config(function ($stateProvider) {
 
 });
 
-app.controller('LoginCtrl', function ($scope, AuthService, $state) {
+app.controller('LoginCtrl', function($scope, AuthService, $state, $http) {
 
     $scope.login = {};
     $scope.error = null;
 
-    $scope.sendLogin = function (loginInfo) {
+    $scope.googleLogin = function() {
+        $http({
+            method: "GET",
+            url: '/auth/google'
+        })
+    }
+
+    $scope.sendLogin = function(loginInfo) {
 
         $scope.error = null;
 
-        AuthService.login(loginInfo).then(function () {
-            $state.go('home');
-        }).catch(function () {
+        AuthService.login(loginInfo).then(function() {
+            $state.go('entries');
+        }).catch(function() {
             $scope.error = 'Invalid login credentials.';
         });
 

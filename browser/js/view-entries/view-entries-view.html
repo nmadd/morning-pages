@@ -3,7 +3,6 @@
         <div class="col-md-8 col-md-offset-2 text-center" ng-repeat="entry in entries">
             <h3>{{entry.date}}</h3>
             <div ng-repeat="field in entry.fields track by $index">
-                <h4>{{field.prompt}}</h4>
                 <p ng-repeat="answer in field.answer">
                     {{answer}}
                 </p>
