@@ -1,9 +1,18 @@
+#left-nav {
+    position:fixed;
+    top: 0px;
+    right: 0px;
+  }
+
+
 navbar {
 
   display: block;
   background: white;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 14px -3px black;
+  position: fixed;
+  height: 100%;
 
   .container {
     width: 91%;
