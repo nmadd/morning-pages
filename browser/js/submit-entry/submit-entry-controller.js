@@ -4,6 +4,10 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
     $scope.entryFormModel = {};
 
+    $scope.isLoggedIn = function () {
+                return AuthService.isAuthenticated();
+            };
+
 
     $scope.fields = theEntryFields;
 
