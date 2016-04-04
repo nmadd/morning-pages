@@ -13,7 +13,6 @@ router.route('/')
             .then(null, next);
     })
     .post((req, res, next) => {
-        console.log('req body', req.body);
         Entry.create(req.body)
             .then(entry => {
                 res.status(201).json(entry);

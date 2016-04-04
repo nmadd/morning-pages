@@ -12,7 +12,6 @@ app.factory('ViewEntriesFactory', function($http, AuthService) {
         })
 
         .then(function(response) {
-            console.log("RESPONSE?", response)
             return response.data
         })
     };

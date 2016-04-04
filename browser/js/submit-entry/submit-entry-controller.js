@@ -48,19 +48,6 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
                 })
             })
 
-        // var entryKeys = Object.keys(entryFormData);
-        // var fields = entryKeys.map(function(key){
-        // 	return entryFormData[key];
-        // });
-        // var newEntry = {
-        // 	user: user._id,
-        // 	date: new Date(),
-        // 	fields: fields
-        // };
-        // $http({
-        // 	method: "POST",
-        // 	url: "/api/entries/",
-        // 	data: newEntry
-        // })
+
     };
 })

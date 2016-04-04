@@ -8,7 +8,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 			theEntries: function(ViewEntriesFactory){
 				return ViewEntriesFactory.getEntries()
 				.then(function(response){
-					console.log('THE ENTRIES', response)
 					return response;
 				})
 			}
