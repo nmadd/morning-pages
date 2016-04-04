@@ -13,12 +13,6 @@ app.controller('LoginCtrl', function($scope, AuthService, $state, $http) {
     $scope.login = {};
     $scope.error = null;
 
-    $scope.googleLogin = function() {
-        $http({
-            method: "GET",
-            url: '/auth/google'
-        })
-    }
 
     $scope.sendLogin = function(loginInfo) {
 

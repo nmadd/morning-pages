@@ -10,9 +10,9 @@ module.exports = function (app) {
     var googleConfig = app.getValue('env').GOOGLE;
 
     var googleCredentials = {
-        clientID: googleConfig.clientID,
-        clientSecret: googleConfig.clientSecret,
-        callbackURL: googleConfig.callbackURL
+        clientID: "980114388612-ts0uqflv6jjjthhf3am424brqkkmqvjm.apps.googleusercontent.com",
+        clientSecret: "tc30Fmk8hX4yG9ybViUABf5Q",
+        callbackURL: "http://localhost:1337/auth/google/callback"
     };
 
     var verifyCallback = function (accessToken, refreshToken, profile, done) {
