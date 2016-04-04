@@ -9,7 +9,8 @@ var schema = new mongoose.Schema({
         ref: "User"
     }],
     date: Date,
-    fields: [mongoose.Schema.Types.Mixed]
+    text: String
+    // fields: [mongoose.Schema.Types.Mixed]
 });
 
 

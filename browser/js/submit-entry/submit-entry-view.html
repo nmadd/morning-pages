@@ -4,10 +4,10 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <form name="entryForm" ng-submit="addEntry(entryFormData)">
                     <div class="form-group" ng-repeat="field in fields track by $index" ng-if="field.active === true">
-                        <label>{{entryFormData[$index].prompt = field.prompt}}</label>
+                        <label>What's on your mind?</label>
                         <br>
-                        <textarea autofocus ng-if="field.answer_type === 'textarea'" name="" id="" cols="30" rows="10" ng-model="entryFormData[$parent.$index].answer[$index]"></textarea>
-                        <input ng-repeat="input in createArray(field.answer_lines) track by $index" ng-if="field.answer_type !== 'textarea'" type="text" id="answer-{{field._id}}-{{$index}}" class="text-class" name="answer" ng-model="entryFormData[$parent.$parent.$index].answer[$index]">
+                        <textarea autofocus ng-if="field.answer_type === 'textarea'" name="" id="" cols="30" rows="10" ng-model="entryFormData.text"></textarea>
+                        <!-- <input ng-repeat="input in createArray(field.answer_lines) track by $index" ng-if="field.answer_type !== 'textarea'" type="text" id="answer-{{field._id}}-{{$index}}" class="text-class" name="answer" ng-model="entryFormData[$parent.$parent.$index].answer[$index]"> -->
 <!--                         <span class='glyphicon glyphicon-remove' ng-click="hideField(field._id)"></span> -->
                     </div>
                     <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>

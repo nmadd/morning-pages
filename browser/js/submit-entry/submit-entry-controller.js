@@ -13,25 +13,26 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
         return new Array(num);
     };
 
-    $scope.addField = function() {
-        var newField = {
-            prompt: $scope.prompt,
-            date: new Date(),
-            answer_lines: $scope.number_answers,
-            answer_type: $scope.answer_type
-        };
-        $http({
-            method: "POST",
-            url: "/api/fields/",
-            data: newField
-        })
-    };
+    // $scope.addField = function() {
+    //     var newField = {
+    //         prompt: $scope.prompt,
+    //         date: new Date(),
+    //         answer_lines: $scope.number_answers,
+    //         answer_type: $scope.answer_type
+    //     };
+    //     $http({
+    //         method: "POST",
+    //         url: "/api/fields/",
+    //         data: newField
+    //     })
+    // };
 
     $scope.addEntry = function(entryFormData) {
-    	var entryKeys = Object.keys(entryFormData);
-        var fields = entryKeys.map(function(key) {
-            return entryFormData[key];
-        });
+        console.log('Entry Form Data', entryFormData);
+    	// var entryKeys = Object.keys(entryFormData);
+     //    var fields = entryKeys.map(function(key) {
+     //        return entryFormData[key];
+     //    });
 
         AuthService.getLoggedInUser()
             .then(function(user) {
@@ -39,7 +40,7 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
                 var newEntry = {
                     user: user._id,
                     date: new Date(),
-                    fields: fields
+                    text: entryFormData.text
                 };
                 $http({
                     method: "POST",

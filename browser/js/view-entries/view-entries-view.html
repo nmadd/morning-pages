@@ -2,11 +2,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-left" ng-repeat="entry in entries">
             <h3>{{entry.date | date:'LLLL d, yyyy'}}</h3>
-            <div ng-repeat="field in entry.fields track by $index">
-                <p class="text-left" ng-repeat="answer in field.answer">
-                    {{answer}}
+            <p>{{entry.text}}</p>
+           <!--  <div ng-repeat="field in entry.fields track by $index">
+                <p class="text-left" ng-repeat="text in field.text">
+                    {{text}}
                 </p>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
