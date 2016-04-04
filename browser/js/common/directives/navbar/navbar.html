@@ -1,12 +1,5 @@
-<nav class="navbar navbar-static-top">
+<nav ng-if="showMenu" class="navbar navbar-static-top">
     <div class="container">
-        <div class="navbar-header">
-            <fullstack-logo></fullstack-logo>
-        </div>
-        <div>
-
-            
-        </div>
         <ul class="nav navbar-nav">
             <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
                 <a ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
@@ -17,10 +10,9 @@
             <li ng-show="user">
                 <a ng-click="logout()">Logout</a>
             </li>
-            <li> 
-                <span class="glyphicon glyphicon-menu-hamburger"></span>
-            </li>
-
         </ul>
     </div>
 </nav>
+<div>
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+</div>
