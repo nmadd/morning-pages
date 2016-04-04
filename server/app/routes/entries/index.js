@@ -20,3 +20,13 @@ router.route('/')
             })
             .then(null, next);
     })
+
+router.route('/:id')
+    .get((req, res, next) => {
+        Entry.find({user: req.params.id})
+            .sort('-date')
+            .then(entries => {
+                res.json(entries);
+            })
+            .then(null, next);
+    })

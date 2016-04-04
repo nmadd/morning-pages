@@ -1,12 +1,18 @@
-app.factory('ViewEntriesFactory', function($http) {
+app.factory('ViewEntriesFactory', function($http, AuthService) {
     var factory = {};
 
-    factory.getEntries = function(){
-        return $http({
-            method: "GET",
-            url: "/api/entries"
+
+    factory.getEntries = function() {
+        return AuthService.getLoggedInUser()
+        .then(function(user) {
+            return $http({
+                method: "GET",
+                url: "/api/entries/" + user._id
+            })
         })
-        .then(function(response){
+
+        .then(function(response) {
+            console.log("RESPONSE?", response)
             return response.data
         })
     };

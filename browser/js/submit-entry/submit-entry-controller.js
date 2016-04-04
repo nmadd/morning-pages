@@ -1,47 +1,66 @@
-app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields){
+app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields, AuthService) {
 
-	$scope.entryFormData = {};
+    $scope.entryFormData = {};
 
-	$scope.entryFormModel = {};
+    $scope.entryFormModel = {};
 
 
-	$scope.fields = theEntryFields;
+    $scope.fields = theEntryFields;
 
-	$scope.hideField = SubmitEntryFactory.hideField;
+    $scope.hideField = SubmitEntryFactory.hideField;
 
-	$scope.createArray  = function(num){
-		return new Array(num);
-	};
+    $scope.createArray = function(num) {
+        return new Array(num);
+    };
 
-	$scope.addField = function(){
-		var newField = {
-			prompt: $scope.prompt, 
-			date: new Date(), 
-			answer_lines: $scope.number_answers,
-			answer_type: $scope.answer_type
-		};
-		$http({
-			method: "POST",
-			url: "/api/fields/",
-			data: newField
-		})
-	};
+    $scope.addField = function() {
+        var newField = {
+            prompt: $scope.prompt,
+            date: new Date(),
+            answer_lines: $scope.number_answers,
+            answer_type: $scope.answer_type
+        };
+        $http({
+            method: "POST",
+            url: "/api/fields/",
+            data: newField
+        })
+    };
 
-	$scope.addEntry = function(entryFormData){
-		var entryKeys = Object.keys(entryFormData);
-		var fields = entryKeys.map(function(key){
-			return entryFormData[key];
-		});
-		var newEntry = {
-			date: new Date(),
-			fields: fields
-		};
-		console.log('Form data',entryFormData);
-		console.log('new entry',newEntry);
-		$http({
-			method: "POST",
-			url: "/api/entries/",
-			data: newEntry
-		})
-	};
+    $scope.addEntry = function(entryFormData) {
+    	var entryKeys = Object.keys(entryFormData);
+        var fields = entryKeys.map(function(key) {
+            return entryFormData[key];
+        });
+
+        AuthService.getLoggedInUser()
+            .then(function(user) {
+               
+                var newEntry = {
+                    user: user._id,
+                    date: new Date(),
+                    fields: fields
+                };
+                $http({
+                    method: "POST",
+                    url: "/api/entries/",
+                    data: newEntry
+                })
+            })
+
+        // var entryKeys = Object.keys(entryFormData);
+        // var fields = entryKeys.map(function(key){
+        // 	return entryFormData[key];
+        // });
+        // var newEntry = {
+        // 	user: user._id,
+        // 	date: new Date(),
+        // 	fields: fields
+        // };
+        // $http({
+        // 	method: "POST",
+        // 	url: "/api/entries/",
+        // 	data: newEntry
+        // })
+    };
 })
