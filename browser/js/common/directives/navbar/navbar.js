@@ -17,7 +17,8 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             scope.showMenu = true;
 
             scope.toggle = function(){
-                
+                console.log('toggley')
+                scope.showMenu = !scope.showMenu;
             }
 
             scope.isLoggedIn = function () {
