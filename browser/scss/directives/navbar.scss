@@ -14,8 +14,18 @@
 
 .navbar, navbar {
   z-index: 1;
+
 }
+
+.navbar-static-top .ng-enter{
+  color: red;
+    transition: all 5s ease-in;
+  }
+
+
+
 navbar {
+
   .container {
       z-index: 1;   
   }

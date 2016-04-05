@@ -9,12 +9,12 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             scope.items = [
                 { label: 'Home', state: 'home'},
                 { label: 'Entries', state: 'entries'},
-                { label: 'Submit', state: 'submit'}
+                { label: 'Write', state: 'submit'}
             ];
 
             scope.user = null;
 
-            scope.showMenu = true;
+            scope.showMenu = false;
 
             scope.toggle = function(){
                 console.log('toggley')
