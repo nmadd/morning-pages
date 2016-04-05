@@ -19,9 +19,16 @@ navbar {
   .container {
       z-index: 1;   
   }
+  .navbar-nav li {
+    float: none;
+    display: inline-block;
+  }
+  .nav {
+    float: none;
+  }
   display: block;
 /*  background: white;*/
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 /*  box-shadow: 1px 1px 14px -3px black;*/
   position: fixed;
   height: 100%;
