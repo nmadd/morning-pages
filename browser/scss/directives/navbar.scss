@@ -1,17 +1,24 @@
 
-/*  .glyphicon-menu-hamburger {
+  .glyphicon-menu-hamburger {
     position: fixed;
     right: 1.5em;
     top: 1em;
     font-size: 2em;
+    z-index: 1000;
   }
-*/
+/*
 .glyphicon {
   font-size: 2em;
   margin-top: 20px
+}*/
+
+.navbar, navbar {
+  z-index: 1;
 }
 navbar {
-
+  .container {
+      z-index: 1;   
+  }
   display: block;
 /*  background: white;*/
   border-bottom: 1px solid black;
