@@ -43,7 +43,7 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
                 var newEntry = {
                     user: user._id,
                     date: new Date(),
-                    text: entryFormData.text
+                    text: entryFormData
                 };
                 $http({
                     method: "POST",
