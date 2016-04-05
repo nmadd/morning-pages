@@ -8,7 +8,6 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
                 return AuthService.isAuthenticated();
             };
 
-
     $scope.fields = theEntryFields;
 
     $scope.hideField = SubmitEntryFactory.hideField;
