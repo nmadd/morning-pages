@@ -152,8 +152,17 @@ navbar {
     padding: 1em 0;
   }
 
-  .ta-scroll-window > {
-    min-height: 60vh;
+  .ta-scroll-window > .ta-bind{
+    min-height: 50vh;
+  }
+
+  #login-text {
+    font-size: 2em;
+  }
+
+  #about-text {
+    font-size: 2em;
+    padding-top: 4em;
   }
 }
 
