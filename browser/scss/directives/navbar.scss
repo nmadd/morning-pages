@@ -123,7 +123,7 @@ navbar {
 
 }
 
-@media (min-width: 480px) {
+@media (max-device-width: 480px) {
   ul {
     font-size: 2em;
   }
@@ -145,3 +145,5 @@ navbar {
     width: 200px;
   }
 }
+
+
