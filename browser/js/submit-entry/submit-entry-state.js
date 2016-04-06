@@ -1,7 +1,7 @@
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('submit', {
-            url: "/submit",
+            url: "/",
             templateUrl: 'js/submit-entry/submit-entry-view.html',
             controller: 'SubmitEntryController',
             resolve: {
@@ -18,6 +18,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 	                    })
                     }
                     return toReturn;
+                },
+                theLogin: function(AuthService){
+                	return AuthService.isAuthenticated()
                 }
             }
         })

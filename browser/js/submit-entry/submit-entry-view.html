@@ -3,8 +3,8 @@
         <label>What's on your mind?</label>
         <div text-angular ng-model="textField" id="text-angular-container">
         </div>
-        <button ng-if="isLoggedIn()" class="btn btn-primary" ng-click="addEntry(textField)">Finish</button>
-    <p ng-if="!isLoggedIn()"><a ui-sref="login">Login</a> to save your entries</p>
+        <button ng-if="user" class="btn btn-primary" ng-click="addEntry(textField)">Finish</button>
+    <p ng-if="!user"><a ui-sref="login">Login</a> to save your entries</p>
     </div>
    
 </div>

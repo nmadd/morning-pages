@@ -7,19 +7,17 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
         link: function (scope) {
 
             scope.items = [
-                { label: 'Home', state: 'home'},
-                { label: 'Entries', state: 'entries'},
                 { label: 'Write', state: 'submit'}
             ];
 
             scope.user = null;
 
-            scope.showMenu = false;
+            // scope.showMenu = false;
 
-            scope.toggle = function(){
-                console.log('toggley')
-                scope.showMenu = !scope.showMenu;
-            }
+            // scope.toggle = function(){
+            //     console.log('toggley')
+            //     scope.showMenu = !scope.showMenu;
+            // }
 
             scope.isLoggedIn = function () {
                 return AuthService.isAuthenticated();

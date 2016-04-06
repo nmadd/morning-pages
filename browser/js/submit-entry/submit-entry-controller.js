@@ -1,5 +1,5 @@
-app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields, AuthService, theCookieText, $state) {
-
+app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields, AuthService, theCookieText, $state, theLogin) {
+    console.log("THE LOGIN", AuthService.isAuthenticated())
     $scope.entryFormData = {};
 
     $scope.entryFormModel = {};
@@ -8,6 +8,15 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
         document.cookie = "saved_text=" + text;
     }
     $scope.textField = theCookieText;
+
+    $scope.user = null;
+
+    var setUser = function () {
+                AuthService.getLoggedInUser().then(function (user) {
+                    $scope.user = user;
+                });
+            };
+
 
     // var timer = null;
 
@@ -40,10 +49,7 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
 
 
-    $scope.isLoggedIn = function() {
-        return AuthService.isAuthenticated();
-        $scope.$digest();
-    };
+    $scope.isLoggedIn = theLogin;
 
     $scope.fields = theEntryFields;
 
@@ -92,4 +98,7 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
 
     };
+    setUser();
+    console.log('SUER', $scope.user)
+
 })
