@@ -1,8 +1,6 @@
 app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields, AuthService, theCookieText, $state, theLogin) {
-    console.log("THE LOGIN", AuthService.isAuthenticated())
-    $scope.entryFormData = {};
 
-    $scope.entryFormModel = {};
+
 
     $scope.setCookie = function(text) {
         document.cookie = "saved_text=" + text;
@@ -33,20 +31,6 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
     $scope.createArray = function(num) {
         return new Array(num);
     };
-
-    // $scope.addField = function() {
-    //     var newField = {
-    //         prompt: $scope.prompt,
-    //         date: new Date(),
-    //         answer_lines: $scope.number_answers,
-    //         answer_type: $scope.answer_type
-    //     };
-    //     $http({
-    //         method: "POST",
-    //         url: "/api/fields/",
-    //         data: newField
-    //     })
-    // };
 
     $scope.addEntry = function(entryFormData) {
         console.log('Entry Form Data', entryFormData);

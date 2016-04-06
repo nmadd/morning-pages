@@ -6,26 +6,6 @@
   transition: all 1s ease-in-out;
 }
 
-/*.main-contest {
-  transition: 1s linear;
-}
-
-.main-contest.ng-add {
-  opacity: 0;
-}
-
-.main-contest.ng-add-active {
-  opacity: 1;
-}
-
-.main-contest.ng-remove {
-  opacity: 0;
-}
-
-.main-contest.ng-remove-active {
-  opacity: 1;
-}
-*/
 .leftSidemenu-test {
   transition: 1s linear;
 }
@@ -47,9 +27,6 @@
 }
 
 
-
-
-
 .glyphicon-menu-hamburger {
     position: fixed;
     left: 1.5em;
@@ -57,11 +34,6 @@
     font-size: 2em;
     z-index: 1000;
   }
-/*
-.glyphicon {
-  font-size: 2em;
-  margin-top: 20px
-}*/
 
 .navbar, navbar {
   z-index: 1;
@@ -72,7 +44,6 @@
   color: red;
     transition: all 5s ease-in;
   }
-
 
 
 navbar {

@@ -6,7 +6,6 @@ app.controller('HomeController', function($scope, $timeout){
 
     $scope.toggle = function(){
         console.log('toggleys')
-       // $scope.triggerAnimation = !$scope.triggerAnimation;
        $scope.showMenu = !$scope.showMenu;
     }
 

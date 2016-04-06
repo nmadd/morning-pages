@@ -3,11 +3,6 @@
         <div class="col-md-8 col-md-offset-2 text-left" ng-repeat="entry in entries">
             <h3>{{entry.date | date:'LLLL d, yyyy'}}</h3>
             <p ng-bind-html="entry.text"></p>
-           <!--  <div ng-repeat="field in entry.fields track by $index">
-                <p class="text-left" ng-repeat="text in field.text">
-                    {{text}}
-                </p>
-            </div> -->
         </div>
     </div>
 </div>

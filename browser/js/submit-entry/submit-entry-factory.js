@@ -23,16 +23,5 @@ app.factory('SubmitEntryFactory', function($http) {
 
 
 
-
-
- //    factory.submitEntry = function(data){
-	// 	$http({
-	// 		method: "POST",
-	// 		url: "/api/submit-entry",
-	// 		data: data
-	// 	})
-	// }
-
-
     return factory;
 })
