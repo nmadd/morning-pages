@@ -25,10 +25,10 @@
 <body ng-app="FullstackGeneratedApp" ng-controller="HomeController">
     <div class="container-fluid" id="main-container">
        <span ng-click="toggle()" class="glyphicon glyphicon-menu-hamburger rotate-hamburger" ng-class="{'rotated-hamburger': showMenu}"></span>
-        <div ng-if="showMenu" class="col-md-2 leftSidemenu test-fade">
-            <navbar class="col-md-12"></navbar>
+        <div class="col-md-1">
+            <navbar  ng-if="showMenu" class="col-md-12 leftSidemenu-test"></navbar>
         </div>
-        <div ng-class="showMenu ? 'col-md-10' : 'col-md-12'">
+        <div class="main-contest" ng-class="showMenu ? 'col-md-10' : 'col-md-10'">
             <div class="col-md-12" id="main" ui-view></div>
         </div>
     </div>

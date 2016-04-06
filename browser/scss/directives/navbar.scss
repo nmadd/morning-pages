@@ -3,14 +3,51 @@
 }
 
 .rotate-hamburger {
-  transition: all .5s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+/*.main-contest {
+  transition: 1s linear;
+}
+
+.main-contest.ng-add {
+  opacity: 0;
+}
+
+.main-contest.ng-add-active {
+  opacity: 1;
+}
+
+.main-contest.ng-remove {
+  opacity: 0;
+}
+
+.main-contest.ng-remove-active {
+  opacity: 1;
+}
+*/
+.leftSidemenu-test {
+  transition: 1s linear;
+}
+
+.leftSidemenu-test.ng-enter {
+  opacity: 0;
+}
+
+.leftSidemenu-test.ng-enter-active {
+  opacity: 1;
+}
+
+.leftSidemenu-test.ng-leave {
+  opacity: 1;
+}
+
+.leftSidemenu-test.ng-leave-active {
+  opacity: 0;
 }
 
 
 
-.navbar-enter {
-  transition: all 2s ease-in-out;
-}
 
 
 .glyphicon-menu-hamburger {
@@ -61,7 +98,7 @@ navbar {
   .container {
     width: 91%;
     max-width: 1340px;
-    padding-top: 20px;
+    padding-top: 6em;
   }
 
   fullstack-logo {

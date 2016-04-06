@@ -1,26 +1,49 @@
-app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields, AuthService) {
+app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFactory, theEntryFields, AuthService, theCookieText, $state) {
 
     $scope.entryFormData = {};
 
     $scope.entryFormModel = {};
 
-    $scope.setCookie = function(text){
-        document.cookie="text=" + text;
+    $scope.setCookie = function(text) {
+        document.cookie = "saved_text=" + text;
     }
+    $scope.textField = theCookieText;
 
-    $scope.test = "test"
+    // var timer = null;
 
-    function getCookies(){
-        console.log(document.cookie.substring(5));
-        return document.cookie.substring(5);
-    }
+    //Set text-angular update and save to cookie every time key is pressed
+    document.getElementById('text-angular-container').addEventListener('keydown', function(){
+        $scope.setCookie($scope.textField)
+    })
 
-    $scope.getCookie = getCookies();
+    // function doStuff(text) {
+    //     console.log('do stuff', text);
+    //     $scope.setCookie(text)
+    // }
+
+    // function saveText(text){
+    //     clearTimeout(timer);
+    //     timer = setTimeout(doStuff(text), 1000)
+    // }
+
+    // function getText(){
+    //     return $scope.getCookie;
+    // }
+
+    // function getCookies() {
+    //     console.log(document.cookie);
+    //     return document.cookie.substring(5);
+    // }
+
+    // $scope.getCookie = getCookies();
 
 
-    $scope.isLoggedIn = function () {
-                return AuthService.isAuthenticated();
-            };
+
+
+    $scope.isLoggedIn = function() {
+        return AuthService.isAuthenticated();
+        $scope.$digest();
+    };
 
     $scope.fields = theEntryFields;
 
@@ -46,14 +69,12 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
     $scope.addEntry = function(entryFormData) {
         console.log('Entry Form Data', entryFormData);
-    	// var entryKeys = Object.keys(entryFormData);
-     //    var fields = entryKeys.map(function(key) {
-     //        return entryFormData[key];
-     //    });
-
+  
+        //Delete current cookie
+        document.cookie = "saved_text=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
         AuthService.getLoggedInUser()
             .then(function(user) {
-               
+
                 var newEntry = {
                     user: user._id,
                     date: new Date(),
@@ -64,6 +85,9 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
                     url: "/api/entries/",
                     data: newEntry
                 })
+            })
+            .then(function(){
+                $state.go('entries')
             })
 
 

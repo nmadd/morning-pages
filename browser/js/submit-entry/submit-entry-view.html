@@ -1,52 +1,13 @@
 <div class="container-fluid">
-    <div class="col-md-8 col-md-offset-2 text-center">
+    <div class="col-md-10 col-md-offset-1 text-center">
         <label>What's on your mind?</label>
-        <div text-angular ng-model="getCookie">
-          <!--   <p>{{test}}</p> -->
+        <div text-angular ng-model="textField" id="text-angular-container">
         </div>
-        <button class="btn btn-primary" ng-click="setCookie(texty)">Finish</button>
-    </div>
-    <!--    <div class="form">
-        <div class="row"> -->
-    <!--             <form name="entryForm" ng-submit="addEntry(entryFormData)">
-                    <div class="form-group" ng-repeat="field in fields track by $index" ng-if="field.active === true">
-                       
-                        <br>
-                       
-                        <textarea autofocus ng-if="field.answer_type === 'textarea'" name="" id="" cols="30" rows="10" ng-model="entryFormData.text"></textarea>
-                        <input ng-repeat="input in createArray(field.answer_lines) track by $index" ng-if="field.answer_type !== 'textarea'" type="text" id="answer-{{field._id}}-{{$index}}" class="text-class" name="answer" ng-model="entryFormData[$parent.$parent.$index].answer[$index]">
-}
-} -->
-    <!--                         <span class='glyphicon glyphicon-remove' ng-click="hideField(field._id)"></span> -->
-    <!--                  </div>
-                    <button ng-if="isLoggedIn()" type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Finish</button>
-                </form> -->
+        <button ng-if="isLoggedIn()" class="btn btn-primary" ng-click="addEntry(textField)">Finish</button>
     <p ng-if="!isLoggedIn()"><a ui-sref="login">Login</a> to save your entries</p>
+    </div>
+   
 </div>
 </div>
 </div>
-<!-- ADD A FIELD -->
-<!--     <div class="form">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
-                <h4>Add a field</h4>
-                <form name="fieldForm" ng-submit="addField(newField)">
-                    <div class="form-group">
-                        <label>Prompt:</label>
-                        <input type="text" name="prompt" ng-model="prompt">
-                    </div>
-                    <div class="form-group">
-                        <label>Number of Answers:</label>
-                        <input type="text" name="number_answers" ng-model="number_answers">
-                    </div>
-                    <div class="form-group">
-                        <label>Answer Type:</label>
-                        <input type="radio" name="answer_type" ng-model="answer_type" value="text"> text
-                        <input type="radio" name="answer_type" ng-model="answer_type" value="textarea"> textarea
-                    </div>
-                    <button type="submit" class="btn btn-primary" ng-disabled="entryForm.$invalid">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div> -->
 </div>
