@@ -33,6 +33,9 @@
     top: 1em;
     font-size: 2em;
     z-index: 1000;
+    &:hover {
+      color: $light-orange
+    };
   }
 
 .navbar, navbar {
@@ -88,11 +91,11 @@ navbar {
     cursor: pointer;
     transition: color 0.2s;
     &.active {
-      color: darken(#f31214, 10%);
+      color: darken($light-orange, 25%);
     }
     &:hover {
       background: none;
-      color: #f31214;
+      color: darken($light-orange, 25%);
     }
     &:focus {
       background: none;
@@ -128,7 +131,10 @@ navbar {
     font-size: 2em;
   }
   .glyphicon {
-    font-size: 3em;
+    font-size:4em;
+  }
+  navbar.container {
+    padding-left: 0;
   }
   .navbar {
     margin-top: 4em;
