@@ -24,8 +24,8 @@
 
 <body ng-app="FullstackGeneratedApp" ng-controller="HomeController">
     <div class="container-fluid">
-       <span ng-click="toggle()" class="glyphicon glyphicon-menu-hamburger"></span>
-        <div ng-if="showMenu" class="col-md-2">
+       <span ng-click="toggle()" class="glyphicon glyphicon-menu-hamburger rotate-hamburger" ng-class="{'rotated-hamburger': showMenu}"></span>
+        <div ng-if="showMenu" class="col-md-2 leftSidemenu">
             <navbar class="col-md-12"></navbar>
         </div>
         <div ng-class="showMenu ? 'col-md-10' : 'col-md-12'">
