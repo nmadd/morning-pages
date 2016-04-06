@@ -7,7 +7,8 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
         link: function (scope) {
 
             scope.items = [
-                { label: 'Write', state: 'submit'}
+                { label: 'Write', state: 'submit'},
+                 { label: 'About', state: 'about'}
             ];
 
             scope.user = null;
@@ -25,7 +26,7 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
 
             scope.logout = function () {
                 AuthService.logout().then(function () {
-                   $state.go('home');
+                   $state.go('about');
                 });
             };
 

@@ -1,11 +1,13 @@
+@import 'variables/main';
+
 * {
     box-sizing: border-box;
-    font-family: "Lantinghei SC";
+    font-family: $main-font;
 }
 
 
 body {
-    background: linear-gradient(165deg, #fff, #F0FBFF, #F2FCFF, #fff1c0 ) no-repeat;
+    background: linear-gradient(165deg, #fff, #F0FBFF, #F2FCFF, $light-orange ) no-repeat;
     background-size: cover;
     height: 100%;
     margin: 0;

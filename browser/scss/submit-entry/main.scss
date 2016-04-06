@@ -2,6 +2,16 @@ p {
 	margin: 0;
 }	
 
+#finish-button {
+	background-color: rgba(0,0,0,0);
+	color: black;
+	border-color: black;
+	border-width: 1px;
+	&:hover {
+		background-color: #fff1c0;
+	}
+}
+
 .ta-toolbar {
 	display: none;
 }

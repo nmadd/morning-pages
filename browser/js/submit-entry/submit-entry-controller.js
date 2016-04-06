@@ -18,38 +18,13 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
             };
 
 
-    // var timer = null;
 
     //Set text-angular update and save to cookie every time key is pressed
     document.getElementById('text-angular-container').addEventListener('keydown', function(){
         $scope.setCookie($scope.textField)
     })
 
-    // function doStuff(text) {
-    //     console.log('do stuff', text);
-    //     $scope.setCookie(text)
-    // }
 
-    // function saveText(text){
-    //     clearTimeout(timer);
-    //     timer = setTimeout(doStuff(text), 1000)
-    // }
-
-    // function getText(){
-    //     return $scope.getCookie;
-    // }
-
-    // function getCookies() {
-    //     console.log(document.cookie);
-    //     return document.cookie.substring(5);
-    // }
-
-    // $scope.getCookie = getCookies();
-
-
-
-
-    $scope.isLoggedIn = theLogin;
 
     $scope.fields = theEntryFields;
 
@@ -99,6 +74,5 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
     };
     setUser();
-    console.log('SUER', $scope.user)
 
 })
