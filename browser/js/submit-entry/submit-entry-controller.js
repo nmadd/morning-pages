@@ -4,6 +4,20 @@ app.controller("SubmitEntryController", function($scope, $http, SubmitEntryFacto
 
     $scope.entryFormModel = {};
 
+    $scope.setCookie = function(text){
+        document.cookie="text=" + text;
+    }
+
+    $scope.test = "test"
+
+    function getCookies(){
+        console.log(document.cookie.substring(5));
+        return document.cookie.substring(5);
+    }
+
+    $scope.getCookie = getCookies();
+
+
     $scope.isLoggedIn = function () {
                 return AuthService.isAuthenticated();
             };
