@@ -7,9 +7,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 		resolve: {
 			theEntryFields: function(SubmitEntryFactory){
 				return SubmitEntryFactory.getFields()
-				.then(function(response){
-					return response;
-				})
 			}
 		}
 	})
