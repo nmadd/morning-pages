@@ -5,19 +5,19 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var mongoose = require('mongoose');
 var UserModel = mongoose.model('User');
 
-module.exports = function (app) {
+module.exports = function(app) {
 
     var googleConfig = app.getValue('env').GOOGLE;
 
     var googleCredentials = {
-        clientID: "980114388612-ts0uqflv6jjjthhf3am424brqkkmqvjm.apps.googleusercontent.com",
-        clientSecret: "tc30Fmk8hX4yG9ybViUABf5Q",
-        callbackURL: "http://localhost:1337/auth/google/callback"
+        clientID: googleConfig.clientID,
+        clientSecret: googleConfig.clientSecret,
+        callbackURL: googleConfig.callbackURL
     };
 
-    var verifyCallback = function (accessToken, refreshToken, profile, done) {
+    var verifyCallback = function(accessToken, refreshToken, profile, done) {
         UserModel.findOne({ 'google.id': profile.id }).exec()
-            .then(function (user) {
+            .then(function(user) {
 
                 if (user) {
                     return user;
@@ -33,9 +33,9 @@ module.exports = function (app) {
                     });
                 }
 
-            }).then(function (userToLogin) {
+            }).then(function(userToLogin) {
                 done(null, userToLogin);
-            }, function (err) {
+            }, function(err) {
                 console.error('Error creating user from Google authentication', err);
                 done(err);
             });
@@ -53,7 +53,7 @@ module.exports = function (app) {
 
     app.get('/auth/google/callback',
         passport.authenticate('google', { failureRedirect: '/login' }),
-        function (req, res) {
+        function(req, res) {
             res.redirect('/submit');
         });
 
