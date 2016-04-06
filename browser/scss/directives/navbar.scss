@@ -34,7 +34,7 @@
     font-size: 2em;
     z-index: 1000;
     &:hover {
-      color: $light-orange
+      color: darken($light-orange, 25%)
     };
   }
 
@@ -145,6 +145,7 @@ navbar {
   }
   #entry-prompt {
     font-size: 3em;
+    font-style: italic;
   }
   #finish-button {
     height: 100px;
