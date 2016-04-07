@@ -35,3 +35,11 @@ label {
 	font-size: 2em;
 	letter-spacing: 2px;
 }
+
+.ta-editor.ta-html, .ta-scroll-window.form-control {
+	min-height: 50vh;
+}
+
+.ta-scroll-window > .ta-bind {
+	min-height: 50vh;
+}
