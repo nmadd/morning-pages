@@ -14,7 +14,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     var cookieArr = document.cookie.split(';');
                     if (cookieArr.length > 0) {
 	                    cookieArr.forEach(function(cookie) {
-	                        if (cookie.search('saved_text') >= 0) toReturn = cookie.substring(11);
+	                        if (cookie.search('saved_text') >= 0) toReturn = cookie.substring(12);
 	                    })
                     }
                     return toReturn;
