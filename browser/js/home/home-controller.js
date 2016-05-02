@@ -9,6 +9,6 @@ app.controller('HomeController', function($scope, $timeout){
        $scope.showMenu = !$scope.showMenu;
     }
 
-    $scope.test = "TEST";
+
 
 })

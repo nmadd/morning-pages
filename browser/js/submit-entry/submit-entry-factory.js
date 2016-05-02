@@ -1,4 +1,4 @@
-app.factory('SubmitEntryFactory', function($http) {
+app.factory('SubmitEntryFactory', function($http, AuthService) {
     var factory = {};
 
     factory.getFields = function() {
