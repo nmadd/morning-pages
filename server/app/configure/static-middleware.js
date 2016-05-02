@@ -2,7 +2,7 @@
 var path = require('path');
 var express = require('express');
 var favicon = require('serve-favicon');
-var compress = require('compression');
+// var compress = require('compression');
 
 module.exports = function (app) {
 
@@ -17,6 +17,6 @@ module.exports = function (app) {
     app.use(express.static(publicPath));
     app.use(express.static(browserPath));
 
-    app.use(express.compress());
+    // app.use(express.compress());
 
 };
